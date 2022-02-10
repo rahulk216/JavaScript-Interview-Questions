@@ -1,15 +1,13 @@
 const getData = () => {
-	console.log('fetching data');
+	console.log('fetch data');
 };
 
 const debounce = function (fxn, delay) {
 	let timer;
 	return function () {
-		let context = this;
-		let args = arguments;
 		clearTimeout(timer);
 		timer = setTimeout(() => {
-			fxn.apply(context, arguments);
+			fxn.apply(this, arguments);
 		}, delay);
 	};
 };
