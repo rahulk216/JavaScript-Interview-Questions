@@ -15,9 +15,8 @@ const memoize = (fxn) =>{
             return cache[n];
         }else{
             console.log('first time')
-            let res = fxn(n)
-            cache[n] = res
-            return res;
+            cache[n] = fxn(n)
+            return cache[n];
         }
     }
 }
